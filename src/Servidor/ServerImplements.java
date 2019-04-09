@@ -121,7 +121,7 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
             mensaje.setContent(m);
 
             Transport t= sesion.getTransport("smtp");
-            t.connect(this.getUsuario(),"ifmuqpplkiyfmghi");
+            t.connect(this.getUsuario(), this.getContrasenia());
             t.sendMessage(mensaje, mensaje.getAllRecipients());
             t.close();
             return true;
